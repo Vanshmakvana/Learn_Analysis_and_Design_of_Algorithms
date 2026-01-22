@@ -1,13 +1,11 @@
 #include <stdio.h>
 
-
 void swap(int *a, int *b)
 {
     int temp = *a;
     *a = *b;
     *b = temp;
 }
-
 
 void heapify(int arr[], int n, int i)
 {
@@ -28,21 +26,17 @@ void heapify(int arr[], int n, int i)
     }
 }
 
-
 void heapSort(int arr[], int n)
 {
-    
     for (int i = n / 2 - 1; i >= 0; i--)
         heapify(arr, n, i);
 
-    
     for (int i = n - 1; i > 0; i--)
     {
         swap(&arr[0], &arr[i]);  
         heapify(arr, i, 0);      
     }
 }
-
 
 int main()
 {
@@ -56,7 +50,6 @@ int main()
         scanf("%d", &arr[i]);
 
     heapSort(arr, n);
-
     printf("Sorted Array using Max-Heap Sort:\n");
     for (int i = 0; i < n; i++)
         printf("%d ", arr[i]);
